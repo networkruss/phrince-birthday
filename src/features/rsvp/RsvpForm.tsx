@@ -8,12 +8,7 @@ export default function RsvpForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const scriptUrl = process.env.NEXT_PUBLIC_RSVP_SCRIPT_URL;
-
-    if (!scriptUrl) {
-      alert("RSVP System is not yet configured. Please add the Script URL to .env.local");
-      return;
-    }
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbySTwnXZelc0_ia5hY5Tte-ZLxKwsIhGYnFLxsHzHPrZvxiGl2twXCziXp4kZ-4B78vSQ/exec";
 
     setLoading(true);
     
