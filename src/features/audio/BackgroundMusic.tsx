@@ -1,10 +1,15 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX, Music } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function BackgroundMusic() {
+  const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef<HTMLIFrameElement>(null);
+
+  // Do not render on print/snapshot pages
+  if (pathname === "/print") return null;
 
   // Note: Most browsers block autoplay. Use a toggle button.
   const toggleMusic = () => {
@@ -24,16 +29,24 @@ export default function BackgroundMusic() {
       {/* Floating Control Button */}
       <button
         onClick={toggleMusic}
-        className={`group flex items-center gap-3 bg-[#0D1117] border-2 ${isPlaying ? 'border-sky-500' : 'border-white/20'} p-3 rounded-full shadow-2xl hover:scale-110 transition-all duration-300`}
+        className={`group flex items-center gap-3 bg-[#0D1117] border-2 ${isPlaying ? 'border-sky-500 shadow-[0_0_20px_rgba(14,165,233,0.3)]' : 'border-white/20'} p-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden max-w-[250px]`}
       >
-        <div className={`p-2 rounded-full ${isPlaying ? 'bg-sky-500 text-white animate-pulse' : 'bg-white/10 text-white/50'}`}>
-          {isPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
+        <div className={`p-2 rounded-full shrink-0 ${isPlaying ? 'bg-sky-500 text-white' : 'bg-white/10 text-white/50'}`}>
+          {isPlaying ? <Music size={20} className="animate-pulse" /> : <VolumeX size={20} />}
         </div>
         
         {isPlaying && (
-          <div className="pr-4 overflow-hidden max-w-0 group-hover:max-w-[200px] transition-all duration-500 whitespace-nowrap">
-            <p className="text-[10px] font-black uppercase tracking-tighter text-sky-400">Now Playing</p>
-            <p className="text-xs font-bold text-white uppercase">Soda Pop 🥤</p>
+          <div className="flex flex-col items-start pr-4 whitespace-nowrap">
+            <div className="flex items-center gap-2">
+              <p className="text-[10px] font-black uppercase tracking-tighter text-sky-400">Now Playing</p>
+              {/* Animated Equalizer Bars */}
+              <div className="flex items-end gap-[2px] h-3">
+                <div className="w-1 bg-sky-400 animate-[bounce_1s_infinite] rounded-full"></div>
+                <div className="w-1 bg-sky-400 animate-[bounce_0.8s_infinite] rounded-full" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-1 bg-sky-400 animate-[bounce_1.2s_infinite] rounded-full" style={{ animationDelay: '0.4s' }}></div>
+              </div>
+            </div>
+            <p className="text-xs font-bold text-white uppercase truncate w-full">Soda Pop 🥤</p>
           </div>
         )}
       </button>

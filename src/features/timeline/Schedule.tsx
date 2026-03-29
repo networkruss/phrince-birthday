@@ -1,14 +1,5 @@
 import { Utensils, Music, Trophy, Camera, PartyPopper, Sparkles, Gamepad2 } from "lucide-react";
-
-const timelineData = [
-  { time: "3:00 PM", task: "Arrival of Guests", sub: "Welcome & Photo Ops", icon: <Camera size={18}/> },
-  { time: "3:30 PM", task: "Grand Entrance", sub: "Tuazon & Dela Cruz Family", icon: <PartyPopper size={18}/> },
-  { time: "3:45 PM", task: "Soda Pop Performance", sub: "Special Opening Song - Phrince Vhienzyl", icon: <Music size={18}/> },
-  { time: "4:00 PM", task: "Opening Prayer", sub: "Led by Emcee Clown", icon: <Sparkles size={18}/> },
-  { time: "4:15 PM", task: "Main Program", sub: "Games & Special Numbers", icon: <Gamepad2 size={18}/> },
-  { time: "5:00 PM", task: "Birthday Feast", sub: "Dinner is Served", icon: <Utensils size={18}/> },
-  { time: "6:00 PM", task: "7 Traditions", sub: "Cake, Gifts, & Wishes", icon: <Trophy size={18}/> },
-];
+import { timelineData } from "@/data/party-info";
 
 export default function Schedule() {
   return (

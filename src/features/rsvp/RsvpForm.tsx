@@ -20,10 +20,16 @@ export default function RsvpForm() {
     try {
       // Get form data
       const formData = new FormData(e.currentTarget as HTMLFormElement);
+      
+      const rawMessage = formData.get("message") as string;
+      const robloxId = formData.get("robloxUsername") as string;
+      
+      const finalMessage = robloxId ? `[Roblox ID: ${robloxId}]\n\n${rawMessage}` : rawMessage;
+
       const data = {
         name: formData.get("guestName"),
         attendees: formData.get("attendees"),
-        message: formData.get("message"),
+        message: finalMessage,
       };
 
       // Submit to Google Sheets
@@ -72,6 +78,17 @@ export default function RsvpForm() {
               required
               className="w-full bg-black/50 border-2 border-white/10 rounded-xl px-4 py-3 focus:border-sky-600 outline-none transition-all text-white"
               placeholder="e.g. Builderman / Guest Name"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase ml-2 flex items-center gap-2 text-white/80">
+              <span className="text-[14px]">🎮</span> Roblox Username <span className="text-[10px] opacity-50 ml-1">(Optional)</span>
+            </label>
+            <input 
+              name="robloxUsername"
+              className="w-full bg-black/50 border-2 border-white/10 rounded-xl px-4 py-3 focus:border-sky-600 outline-none transition-all text-white"
+              placeholder="e.g. xX_DragonSlayer_Xx"
             />
           </div>
 
