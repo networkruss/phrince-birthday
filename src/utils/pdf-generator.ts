@@ -41,7 +41,7 @@ export const generateInvitationPDF = async () => {
       startY: 75,
       head: [["EVENT DETAILS", "INFORMATION"]],
       body: [
-        ["DATE", "Thursday, May 8, 2026"],
+        ["DATE", "Friday, May 8, 2026"],
         ["TIME", "3:00 PM - 6:00 PM"],
         ["VENUE", "Buddha Resort"],
         ["THEME", "Roblox - Sky Blue Edition"],

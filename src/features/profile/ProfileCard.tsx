@@ -42,7 +42,7 @@ export default function ProfileCard() {
               🎂 <span className="font-bold">Age:</span> Turning 7!
             </p>
             <p className="flex items-center justify-center md:justify-start gap-2">
-              📅 <span className="font-bold">Birthday:</span> May 8, 2026
+              📅 <span className="font-bold">Birthday:</span> Friday, May 8, 2026
             </p>
             <p className="flex items-center justify-center md:justify-start gap-2">
               👕 <span className="font-bold">Costume:</span> Epic Sky Blue Edition

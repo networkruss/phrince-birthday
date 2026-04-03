@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
             <div>
               <p className="text-xs uppercase opacity-50 font-bold print:opacity-70">When</p>
-              <p className="font-bold print:text-slate-900">Thursday, May 8, 2026</p>
+              <p className="font-bold print:text-slate-900">Friday, May 8, 2026</p>
             </div>
           </div>
  

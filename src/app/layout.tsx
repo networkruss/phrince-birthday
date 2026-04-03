@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Join us for Phrince Vhienzyl's Level 7 Unlocked Birthday Bash!",
   openGraph: {
     title: "Phrince Vhienzyl @ 7 | Roblox Party",
-    description: "Level 7 Unlocked! Join the ultimate Roblox gaming party on May 8, 2026.",
+    description: "Level 7 Unlocked! Join the ultimate Roblox gaming party on Friday, May 8, 2026.",
     url: "https://phrince-7th-birthday.vercel.app",
     siteName: "Phrince Vhienzyl's 7th Birthday",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Phrince Vhienzyl @ 7 | Level 7 Unlocked!",
-    description: "Join the ultimate Roblox gaming party on May 8, 2026.",
+    description: "Join the ultimate Roblox gaming party on Friday, May 8, 2026.",
     images: ["/og-image.jpg"],
   },
 };
